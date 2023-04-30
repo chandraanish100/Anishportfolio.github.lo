@@ -292,7 +292,7 @@
 
                 </div>
                 <div class="container2">
-                    <form action="https://formsubmit.co/chandraanish100@gmail.com" method="POST">
+                    <form onsubmit="sendEmail(); reset(); return false;">
                         <div class="row">
                         <div class="col-25">
                             <label for="name"><b>Your Name:</b></label>
@@ -331,6 +331,22 @@
                         </div>
                     </form>
                   </div>
+              <script src="https://smtpjs.com/v3/smtp.js"></script>
+              <script>
+                   function sendEmail(){
+                   Email.send({
+                        Host : "smtp.gmail.com",
+                        Username : "chandraanish100@gmail.com",
+                        Password : "riju@1997",
+                        To : 'chandraanish100@gmail.com',
+                        From : document.getElementById("email").value,
+                        Subject : "This is From user",
+                        Body : "And this is the body"
+                      }).then(
+                      message => alert(message)
+                      );
+                   }
+              </script>
             </div>
         </div>
         <div>
